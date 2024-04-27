@@ -55,6 +55,7 @@ android {
     testOptions {
         unitTests {
             isIncludeAndroidResources = true
+            isReturnDefaultValues = true
         }
     }
 }
@@ -90,10 +91,18 @@ dependencies {
     testImplementation(libs.androidx.junitKtx)
     testImplementation(libs.androidx.testCore)
     testImplementation(libs.robolectric)
+    testImplementation(libs.kotlinx.coroutinesTest)
 
     // AndroidX Test - Instrumented testing
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.espressoCore)
+    androidTestImplementation(libs.junit)
+    androidTestImplementation(libs.kotlinx.coroutinesTest)
+    androidTestImplementation(libs.androidx.espressoContrib)
+    androidTestImplementation(libs.mockito.core)
+    androidTestImplementation(libs.dexmaker.mockito)
+    implementation(libs.androidx.fragmentTesting)
+    implementation(libs.androidx.testCore)
 
     // Kotlin
     implementation(libs.kotlin.stdlib)
