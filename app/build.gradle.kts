@@ -51,6 +51,12 @@ android {
     kotlinOptions {
         jvmTarget = javaVersion.toString()
     }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -78,6 +84,12 @@ dependencies {
 
     // Dependencies for local unit tests
     testImplementation(libs.junit)
+    testImplementation(libs.hamcrest)
+
+    testImplementation(libs.androidx.archCoreTest)
+    testImplementation(libs.androidx.junitKtx)
+    testImplementation(libs.androidx.testCore)
+    testImplementation(libs.robolectric)
 
     // AndroidX Test - Instrumented testing
     androidTestImplementation(libs.androidx.junit)
