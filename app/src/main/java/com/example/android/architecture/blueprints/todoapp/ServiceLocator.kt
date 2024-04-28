@@ -17,6 +17,8 @@ object ServiceLocator {
 
     private var database: ToDoDatabase? = null
 
+    private var databaseFactory: (Context) -> ToDoDatabase = ::createDataBase
+
     @Volatile
     var tasksRepository: TasksRepository? = null
         @VisibleForTesting set
@@ -37,6 +39,14 @@ object ServiceLocator {
         }
     }
 
+    fun setDatabaseFactory(factory: (Context) -> ToDoDatabase) {
+        databaseFactory = factory
+    }
+
+    fun resetDatabaseFactory() {
+        databaseFactory = ::createDataBase
+    }
+
     fun provideTasksRepository(context: Context): TasksRepository {
         return tasksRepository ?: createTaskRepository(context)
     }
@@ -55,7 +65,7 @@ object ServiceLocator {
     }
 
     private fun createTaskLocalDataSource(context: Context): TasksDataSource {
-        val database = database ?: createDataBase(context)
+        val database = database ?: databaseFactory(context)
         return TasksLocalDataSource(database.taskDao())
     }
 

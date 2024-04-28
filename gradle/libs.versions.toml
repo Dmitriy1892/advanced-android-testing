@@ -59,6 +59,7 @@ junit = { module = "junit:junit", version.ref = "junitVersion" }
 hamcrest = { module = "org.hamcrest:hamcrest-all", version.ref = "hamcrestVersion" }
 androidx-espressoCore = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoVersion" }
 androidx-espressoContrib = { module = "androidx.test.espresso:espresso-contrib", version.ref = "espressoVersion" }
+androidx-espressoIdling = { module = "androidx.test.espresso:espresso-idling-resource", version.ref = "espressoVersion" }
 androidx-archCoreTest = { module = "androidx.arch.core:core-testing", version.ref = "archTestingVersion" }
 androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidXTestExtKotlinRunnerVersion" }
 androidx-junitKtx = { module = "androidx.test.ext:junit-ktx", version.ref = "androidXTestExtKotlinRunnerVersion" }

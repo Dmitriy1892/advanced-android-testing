@@ -94,11 +94,13 @@ dependencies {
     testImplementation(libs.kotlinx.coroutinesTest)
 
     // AndroidX Test - Instrumented testing
-    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.archCoreTest)
+    androidTestImplementation(libs.androidx.espressoContrib)
     androidTestImplementation(libs.androidx.espressoCore)
+    implementation(libs.androidx.espressoIdling)
+    androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.kotlinx.coroutinesTest)
-    androidTestImplementation(libs.androidx.espressoContrib)
     androidTestImplementation(libs.mockito.core)
     androidTestImplementation(libs.dexmaker.mockito)
     implementation(libs.androidx.fragmentTesting)
